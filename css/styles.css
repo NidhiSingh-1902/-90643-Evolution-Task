@@ -401,3 +401,51 @@ tr:nth-child(even) {
     color: white;
 }
 
+/**
+* Media Queries for Responsiveness.
+*/
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .navbar:hover .nav-list {
+        display: flex;
+    }
+
+    .search-bar {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .search-bar input {
+        width: 70%;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;
+    }
+}

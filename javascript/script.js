@@ -63,6 +63,7 @@ function startCarousel() {
 showSlide(currentSlide);
 startCarousel();
 
+
 /**
  * Adds sorting functionality for the product names.
  */
@@ -84,7 +85,6 @@ document.getElementById("sortProductName")?.addEventListener("click", () => {
      */
     rows.forEach(row => table.querySelector("tbody").appendChild(row));
 });
-
 
 
 document.addEventListener("DOMContentLoaded", () => {

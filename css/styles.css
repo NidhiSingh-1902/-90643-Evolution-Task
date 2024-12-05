@@ -1,0 +1,451 @@
+/**
+* Basic styling for the navigation. 
+*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+/**
+*  Dropdown menu styling.
+*/
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.dropdown-menu ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu ul li a:hover {
+    background-color: #555;
+}
+
+/**
+* Hover effect to display the dropdown menu. 
+*/
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-item:hover .nav-link {
+    background-color: #555;
+}
+
+/**
+* Search bar styling.
+*/
+.search-bar {
+    margin-left: auto;
+    display: flex;
+    gap: 5px;
+}
+
+.search-bar input {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-bar button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.search-bar button:hover {
+    background-color: #666;
+}
+
+/**
+* Card container styling.
+*/
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/**
+* Individual card styling. 
+*/
+.card {
+    width: 18rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #777;
+}
+
+.card a.btn {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+.card a.btn:hover {
+    background-color: #0056b3;
+}
+
+/**
+* Hover effect on cards.
+*/
+.card:hover {
+    transform: scale(1.05);
+}
+
+/**
+* Carousel Styling.
+*/
+.carousel {
+    position: relative;
+    max-width: 100%;
+    height: 400px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-slide .caption {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.carousel-slide.active {
+    display: block;
+    opacity: 1;
+}
+
+.carousel-slide:not(.active) {
+    opacity: 0;
+}
+
+/**
+* Footer Styling.
+*/
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ff6f61;
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+    color: #fff;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/**
+* Logo Styling. 
+*/
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/**
+* Bag Section.
+*/
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 20px;
+}
+
+.user-actions a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 14px;
+}
+
+.user-actions a:hover {
+    color: #555;
+}
+
+.user-actions img {
+    height: 24px;
+    width: 24px;
+    margin-right: 5px;
+}
+
+/**
+* Category Cards.
+*/
+.category-card {
+    position: relative;
+    width: 200px;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.category-card .card-img {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.category-card .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.category-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+}
+
+.category-card h3 {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.add-to-cart {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+.off {
+    text-decoration: line-through;
+    color: #B8B8B8;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.btn-blue {
+    background-color: blue;
+    color: white;
+}
+
+/**
+* Media Queries for Responsiveness.
+*/
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .navbar:hover .nav-list {
+        display: flex;
+    }
+
+    .search-bar {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .search-bar input {
+        width: 70%;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;
+    }
+}

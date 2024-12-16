@@ -449,3 +449,31 @@ tr:nth-child(even) {
         flex: 1 1 100%;
     }
 }
+
+/* Style for the bag icon and the dynamic counter */
+.user-actions .bag {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style for the cart counter */
+.cart-counter {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+}
+
+/* Optional: Styling for the bag icon to align with the counter */
+.user-actions .bag img {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+}

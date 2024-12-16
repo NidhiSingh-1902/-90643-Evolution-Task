@@ -1,8 +1,7 @@
-/**
-* DOMContentLoader :- Ensures that the HTML document is loaded
-* and parsed successfully.
-*/
 document.addEventListener("DOMContentLoaded", () => {
+    // Update the cart item counter on page load
+    updateCartCounter();
+
     /**
      * Fetching the search button and input value.
      */
@@ -32,62 +31,29 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Category is not available yet.");
         }
     });
-});
-
-/**
- * Adding Carousel.
- */
-let currentSlide = 0;
-const slides = document.querySelectorAll(".carousel-slide");
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove("active");
-        if (i === index) slide.classList.add("active");
-    });
-}
-
-/**
- * Sets the timer for the Carousel slides.
- */
-function startCarousel() {
-    setInterval(() => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }, 3000);
-}
-
-/**
- * Initialize the carousel.
- */
-showSlide(currentSlide);
-startCarousel();
-
-
-/**
- * Adds sorting functionality for the product names.
- */
-document.getElementById("sortProductName")?.addEventListener("click", () => {
-    const table = document.getElementById("cartTable");
-    const rows = Array.from(table.querySelectorAll("tbody tr"));
 
     /**
-     * Sorts the rows by product name.
+     * Adds sorting functionality for the product names.
      */
-    rows.sort((rowA, rowB) => {
-        const nameA = rowA.cells[0].textContent.trim().toLowerCase();
-        const nameB = rowB.cells[0].textContent.trim().toLowerCase();
-        return nameA.localeCompare(nameB);
+    document.getElementById("sortProductName")?.addEventListener("click", () => {
+        const table = document.getElementById("cartTable");
+        const rows = Array.from(table.querySelectorAll("tbody tr"));
+
+        /**
+         * Sorts the rows by product name.
+         */
+        rows.sort((rowA, rowB) => {
+            const nameA = rowA.cells[0].textContent.trim().toLowerCase();
+            const nameB = rowB.cells[0].textContent.trim().toLowerCase();
+            return nameA.localeCompare(nameB);
+        });
+
+        /**
+         * Append sorted rows back to the table.
+         */
+        rows.forEach(row => table.querySelector("tbody").appendChild(row));
     });
 
-    /**
-     * Append sorted rows back to the table.
-     */
-    rows.forEach(row => table.querySelector("tbody").appendChild(row));
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
     /**
      * Handles Add to Cart functionality.
      */
@@ -131,9 +97,36 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("cartItems", JSON.stringify(cart));
 
         /**
+         * Update the cart item count.
+         */
+        updateCartCounter();
+
+        /**
          * Redirect to Add to Cart page.
          */
         window.location.href = "add-to-cart.html";
+    }
+
+    /**
+     * Update the cart counter on the bag icon.
+     */
+    function updateCartCounter() {
+        const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const itemCount = cart.length;
+
+        const bagIcon = document.querySelector(".user-actions .bag");
+        const counter = document.createElement("span");
+        counter.classList.add("cart-counter");
+        counter.textContent = itemCount;
+
+        // Remove previous counter if it exists
+        const existingCounter = bagIcon.querySelector(".cart-counter");
+        if (existingCounter) {
+            existingCounter.remove();
+        }
+
+        // Add the new counter
+        bagIcon.appendChild(counter);
     }
 });
 
@@ -271,6 +264,11 @@ function removeItemFromCart(index) {
      * Refresh the cart display.
      */
     displayCartItems();
+
+    /**
+     * Update the cart counter.
+     */
+    updateCartCounter();
 }
 
 /**
@@ -292,6 +290,11 @@ function deleteItem(index) {
      */
     localStorage.setItem("cartItems", JSON.stringify(cart));
     displayCartItems();
+
+    /**
+     * Update the cart counter.
+     */
+    updateCartCounter();
 }
 
 /**
@@ -301,6 +304,11 @@ function clearCart() {
     localStorage.removeItem("cartItems");
     displayCartItems();
     alert("Your cart has been cleared!");
+
+    /**
+     * Update the cart counter.
+     */
+    updateCartCounter();
 }
 
 /**

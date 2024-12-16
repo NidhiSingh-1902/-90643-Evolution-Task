@@ -10,10 +10,73 @@
 
 <body>
     <nav class="navbar">
+        <div class="logo">
+            <a href="#">
+                <img src="main-logo.jpg" alt="Myntra Logo" href="#" class="img-fluid">
+            </a>
+        </div>
         <ul class="nav-list">
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="makeup.html" class="nav-link">Makeup Item's</a></li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Men's</a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="jackets.html">Jackets</a></li>
+                        <li><a href="men-tshirt.html">T-Shirts</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Women’s</a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="women-kurta.html">Kurtas & Suits</a></li>
+                        <li><a href="sarees.html">Sarees</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Kids</a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="boys-clothing.html">Boys Clothing</a></li>
+                        <li><a href="girls-clothing.html">Girls Clothing</a></li>
+                        <li><a href="toys.html">Toys</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Beauty</a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="makeup.html">Makeup</a></li>
+                        <li><a href="men-gromming.html">Men's Gromming</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Accessories</a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a href="watches.html">Watches</a></li>
+                        <li><a href="purse.html">Purse</a></li>
+                    </ul>
+                </div>
+            </li>
         </ul>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for category..." />
+            <button id="searchButton">Search</button>
+        </div>
+        <!-- Bag -->
+        <div class="user-actions">
+            <a href="add-to-cart.html" class="bag">
+                <img src="bag-icon.png" alt="Bag Icon">
+                <span id="cartCounter" class="cart-counter">0</span>
+            </a>
+        </div>
     </nav>
 
     <div class="card-container">
